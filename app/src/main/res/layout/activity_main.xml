@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="currentDate"
+            name="currentDateTime"
             type="com.example.visiblepractice.CurrentDate" />
     </data>
 
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@{currentDate.formattedDate}"
+            android:text="@{currentDateTime.formattedDate}"
             android:textSize="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -39,12 +39,11 @@
 
         <TextView
             android:id="@+id/garbage_kind"
-            isVisible="@{currentDate.date.equals(sun)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="64dp"
             android:text="@string/garbage_kind"
-            android:textSize="20dp"
+            android:textSize="24dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/current_date" />
