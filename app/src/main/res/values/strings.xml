@@ -2,4 +2,10 @@
     <string name="app_name">VisiblePractice</string>
     <string name="current_date">今日の日付</string>
     <string name="garbage_kind">今日は%sの日です</string>
+    <string name="garbage_kind_1">燃えるごみ</string>
+    <string name="garbage_kind_2">燃えないごみ</string>
+    <string name="garbage_kind_3">ビン・缶・ペットボトル</string>
+    <string name="garbage_kind_4">プラスチック</string>
+    <string name="garbage_kind_5">資源ごみ</string>
+    <string name="garbage_kind_no">今日はゴミ捨てはありません</string>
 </resources>

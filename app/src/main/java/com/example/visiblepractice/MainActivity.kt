@@ -22,16 +22,53 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun getCurrentDate() {
+        // 現在の日時
         val currentDateTime: LocalDateTime = LocalDateTime.now() // os>=21
         val formatter = DateTimeFormatter.ofPattern("yyyy年 M月 d日")
+        // 整形後の日時
         val formattedDate: String = currentDateTime.format(formatter)
-        val dateTime = CurrentDate(currentDateTime, "月曜日", formattedDate)
+        // 曜日
+        val date: String = currentDateTime.dayOfWeek.toString()
+        // data classへ値を保存する
+        val dateTime = CurrentDate(currentDateTime, date, formattedDate)
+        // xmlへ値を共有する
         binding.currentDateTime = dateTime
-        binding.garbageKind.text = getString(R.string.garbage_kind, "月曜日")
-        getKindOfGarbageByDate()
+        // ゴミの種類を計算する
+        getKindOfGarbageByDate(date)
     }
 
-    fun getKindOfGarbageByDate() {
-
+    private fun getKindOfGarbageByDate(date: String) {
+        var dateStr = ""
+        when (date) {
+            "SUNDAY" -> {
+                dateStr = getString(R.string.garbage_kind_1)
+            }
+            "MONDAY" -> {
+                dateStr = getString(R.string.garbage_kind_2)
+            }
+            "TUESDAY" -> {
+                dateStr = getString(R.string.garbage_kind_3)
+            }
+            "WEDNESDAY" -> {
+                dateStr = getString(R.string.garbage_kind_4)
+            }
+            "THURSDAY" -> {
+                dateStr = getString(R.string.garbage_kind_5)
+            }
+            "FRIDAY" -> {
+                dateStr = ""
+            }
+            "SATURDAY" -> {
+                dateStr = getString(R.string.garbage_kind_1)
+            }
+            else -> {
+                dateStr = ""
+            }
+        }
+        if (!dateStr.isNullOrEmpty()) {
+            binding.garbageKind.text = getString(R.string.garbage_kind, dateStr)
+        } else {
+            binding.garbageKind.text = getString(R.string.garbage_kind_no)
+        }
     }
 }
