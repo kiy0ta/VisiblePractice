@@ -4,6 +4,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.visiblepractice.databinding.ActivityMainBinding
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -18,6 +19,25 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         getCurrentDate()
+        val dateList = mutableListOf<String>()
+        dateList.add("日曜日")
+        dateList.add("月曜日")
+        dateList.add("火曜日")
+        dateList.add("水曜日")
+        dateList.add("木曜日")
+        dateList.add("金曜日")
+        dateList.add("土曜日")
+        val garbageList = mutableListOf<String>()
+        garbageList.add(getString(R.string.garbage_kind_1))
+        garbageList.add(getString(R.string.garbage_kind_2))
+        garbageList.add(getString(R.string.garbage_kind_3))
+        garbageList.add(getString(R.string.garbage_kind_4))
+        garbageList.add(getString(R.string.garbage_kind_5))
+        garbageList.add("なし")
+        garbageList.add(getString(R.string.garbage_kind_1))
+        binding.recyclerView.adapter = MainAdapter(this, dateList, garbageList)
+        binding.recyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
