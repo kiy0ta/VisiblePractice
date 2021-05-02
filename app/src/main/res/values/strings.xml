@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">VisiblePractice</string>
+    <string name="current_date">今日の日付</string>
+    <string name="garbage_kind">今日は%dの日です</string>
 </resources>
