@@ -5,6 +5,9 @@
    - 今日の日時を取得して、捨てるゴミの種類を表示する
  - %d(数字)や%s(文字列)を使ってxmlの値を動的に書き換える
 
+## document
+ - https://developer.android.com/topic/libraries/data-binding/expressions?hl=ja
+
 ## error
  - https://hackmd.io/x4da7rpyTN-N3UZcy9alMA
 
